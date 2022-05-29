@@ -1,11 +1,11 @@
 <header class="header">
-  <a>
+  <a routerLink="/">
     <img src="assets/images/logo.png" alt="logo" class="logo">
   </a>
 
   <nav class="navbar">
-    <app-link>Home</app-link>
-    <app-link>About</app-link>
+    <app-link routerLink="/home">Home</app-link>
+    <app-link (click)="redirectAbout()">About</app-link>
     <app-link>Menu</app-link>
     <app-link>Products</app-link>
   </nav>
