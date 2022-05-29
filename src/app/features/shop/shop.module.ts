@@ -11,6 +11,9 @@ import { AboutComponent } from './views/about/about.component';
 import { TitleComponent } from '../../shared/components/title/title.component';
 import { MenuComponent } from './views/menu/menu.component';
 import { CardMenuComponent } from '../../shared/components/card-menu/card-menu.component';
+import { ProductComponent } from './views/product/product.component';
+import { CardProductComponent } from '../../shared/components/card-product/card-product.component';
+import { StarsComponent } from '../../shared/components/stars/stars.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { CardMenuComponent } from '../../shared/components/card-menu/card-menu.c
     AboutComponent,
     TitleComponent,
     MenuComponent,
-    CardMenuComponent
+    CardMenuComponent,
+    ProductComponent,
+    CardProductComponent,
+    StarsComponent
   ],
   imports: [
     CommonModule,

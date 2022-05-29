@@ -1,0 +1,35 @@
+.product {
+  text-align: center;
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.image {
+  padding: 2.5rem 0;
+}
+
+.product-image {
+  height: 25rem;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.price {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.before-price {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
