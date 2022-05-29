@@ -1,0 +1,26 @@
+.button-border {
+  color: white;
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.button-border:hover {
+  background-color: #D3AD7F;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.icon {
+  margin: 0.3rem;
+  line-height: 5rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.text {
+  padding: 0.7rem 2rem;
+}

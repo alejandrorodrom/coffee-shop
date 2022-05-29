@@ -14,6 +14,7 @@ import { CardMenuComponent } from '../../shared/components/card-menu/card-menu.c
 import { ProductComponent } from './views/product/product.component';
 import { CardProductComponent } from '../../shared/components/card-product/card-product.component';
 import { StarsComponent } from '../../shared/components/stars/stars.component';
+import { ButtonBorderComponent } from '../../shared/components/button-border/button-border.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { StarsComponent } from '../../shared/components/stars/stars.component';
     CardMenuComponent,
     ProductComponent,
     CardProductComponent,
-    StarsComponent
+    StarsComponent,
+    ButtonBorderComponent
   ],
   imports: [
     CommonModule,

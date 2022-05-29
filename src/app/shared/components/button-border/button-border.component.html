@@ -1,0 +1,9 @@
+<div
+  class="button-border" [ngClass]="{
+    'icon': icon.length,
+    'text': !icon.length,
+    'circle': mode !== 'square'
+  }">
+  <i *ngIf="icon.length" [class]="icon" [style.font-size]="'2rem'"></i>
+  {{ text }}
+</div>
