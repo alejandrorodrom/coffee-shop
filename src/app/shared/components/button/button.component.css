@@ -1,0 +1,10 @@
+.button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  font-size: 1.7rem;
+  color: white;
+  background-color: #D3AD7F;
+  cursor: pointer;
+  border: none;
+}

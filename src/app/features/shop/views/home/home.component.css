@@ -1,0 +1,26 @@
+.home {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: url('src/assets/images/home-img.jpeg') no-repeat center;
+  background-size: cover;
+  padding: 0 7%;
+}
+
+.content {
+  max-width: 60rem;
+}
+
+.title {
+  font-size: 6rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: white;
+}

@@ -6,6 +6,7 @@ import { ShopComponent } from './shop.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LinkComponent } from '../../shared/components/link/link.component';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LinkComponent } from '../../shared/components/link/link.component';
     ShopComponent,
     HomeComponent,
     HeaderComponent,
-    LinkComponent
+    LinkComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
