@@ -11,7 +11,7 @@
   </nav>
 
   <div class="icons">
-    <i class="fas fa-search"></i>
-    <i class="fas fa-shopping-cart"></i>
+    <i *ngIf="route.url === '/menu' || route.url === '/products'" class="fas fa-search"></i>
+    <i *ngIf="route.url === '/menu' || route.url === '/products'" class="fas fa-shopping-cart"></i>
   </div>
 </header>
