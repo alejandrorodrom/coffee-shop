@@ -5,11 +5,17 @@ import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
 import { MenuComponent } from './views/menu/menu.component';
 import { ProductComponent } from './views/product/product.component';
+import { AuthGuard } from '../../shared/guards/auth.guard';
+import { AuthChildGuard } from '../../shared/guards/auth-child.guard';
+import { AuthDeactivateGuard } from '../../shared/guards/auth-deactivate.guard';
+import { MenuResolver } from '../../shared/resolvers/menu.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: ShopComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthChildGuard],
     children: [
       {
         path: '',
@@ -18,7 +24,8 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent
+        canDeactivate: [AuthDeactivateGuard],
+        component: HomeComponent,
       },
       {
         path: 'about',
@@ -26,6 +33,9 @@ const routes: Routes = [
       },
       {
         path: 'menu',
+        resolve: {
+          data: MenuResolver
+        },
         component: MenuComponent
       },
       {
