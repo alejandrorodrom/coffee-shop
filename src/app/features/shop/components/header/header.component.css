@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+  height: 6rem;
+}
+
+.icons {
+  width: 9.4rem;
+}
+
+.icons i {
+  color: white;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}

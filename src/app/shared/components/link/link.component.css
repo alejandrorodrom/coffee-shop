@@ -1,0 +1,12 @@
+.link {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #D3AD7F;
+  border-bottom: 0.1rem solid #D3AD7F;
+  padding-bottom: 0.5rem;
+}
