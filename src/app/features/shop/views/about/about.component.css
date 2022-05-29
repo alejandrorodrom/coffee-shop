@@ -1,0 +1,39 @@
+.content {
+  padding: 10rem 7%;
+}
+
+.title {
+  text-align: center;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  background-color: #13131A;
+  flex-wrap: wrap;
+}
+
+.image {
+  flex: 1 1 45rem;
+}
+
+.about-img {
+  width: 100%;
+}
+
+.text {
+  flex: 1 1 45rem;
+  padding: 2rem;
+}
+
+.question {
+  font-size: 3rem;
+  color: white;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #CCC;
+  padding: 1rem 0;
+  line-height: 1.8;
+}

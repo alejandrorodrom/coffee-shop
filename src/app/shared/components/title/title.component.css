@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.title {
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.word-two {
+  font-size: 4rem;
+}

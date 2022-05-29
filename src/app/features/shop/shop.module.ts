@@ -7,6 +7,8 @@ import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LinkComponent } from '../../shared/components/link/link.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
+import { AboutComponent } from './views/about/about.component';
+import { TitleComponent } from '../../shared/components/title/title.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     HomeComponent,
     HeaderComponent,
     LinkComponent,
-    ButtonComponent
+    ButtonComponent,
+    AboutComponent,
+    TitleComponent
   ],
   imports: [
     CommonModule,
