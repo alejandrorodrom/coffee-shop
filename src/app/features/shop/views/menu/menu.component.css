@@ -1,0 +1,13 @@
+.content {
+  padding: 5rem 7%;
+}
+
+.title {
+  text-align: center;
+}
+
+.menus {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}

@@ -1,0 +1,35 @@
+.content {
+  padding: 5rem;
+  text-align: center;
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.content:hover {
+  background-color: white;
+}
+
+.content:hover > * {
+  color: black;
+}
+
+.image {
+  height: 10rem;
+}
+
+.name {
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.price {
+  color: white;
+  font-size: 2.7rem;
+  padding: 0.5rem 0;
+}
+
+.before-price {
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  font-weight: lighter;
+}

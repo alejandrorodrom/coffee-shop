@@ -9,6 +9,8 @@ import { LinkComponent } from '../../shared/components/link/link.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { AboutComponent } from './views/about/about.component';
 import { TitleComponent } from '../../shared/components/title/title.component';
+import { MenuComponent } from './views/menu/menu.component';
+import { CardMenuComponent } from '../../shared/components/card-menu/card-menu.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { TitleComponent } from '../../shared/components/title/title.component';
     LinkComponent,
     ButtonComponent,
     AboutComponent,
-    TitleComponent
+    TitleComponent,
+    MenuComponent,
+    CardMenuComponent
   ],
   imports: [
     CommonModule,

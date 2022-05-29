@@ -1,0 +1,12 @@
+<div class="content">
+  <app-title text="our menu" mode="2" class="title"></app-title>
+  <div class="menus">
+    <app-card-menu
+      *ngFor="let menu of menus"
+      [image]="menu.image"
+      [name]="menu.name"
+      [price]="menu.price"
+      [beforePrice]="menu.beforePrice">
+    </app-card-menu>
+  </div>
+</div>

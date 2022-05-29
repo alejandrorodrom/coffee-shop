@@ -1,0 +1,9 @@
+<div class="content">
+  <img [src]="image" alt="menu">
+  <h3 class="name">{{ name }}</h3>
+  <div class="price">
+    {{ price | currency: 'S/' }}
+    <span class="before-price">{{ beforePrice | currency: 'S/' }}</span>
+  </div>
+  <app-button>Add to Cart</app-button>
+</div>
