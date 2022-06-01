@@ -15,9 +15,7 @@ export class MenuComponent implements OnInit {
     private activateRoute: ActivatedRoute
   ) {
     this.activateRoute.data.subscribe(value => {
-      console.log(value['data']);
       if (value['data'].error) {
-        console.log('error');
       } else {
         this.menus = value['data'];
       }

@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log('Can Activate');
     return true;
   }
 
