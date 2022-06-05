@@ -4,5 +4,6 @@
   <app-input type="email" placeholder="email" icon="fas fa-at"></app-input>
   <app-input type="number" placeholder="number" icon="fas fa-phone"></app-input>
   <app-button (click)="contactNow()">Contact Now</app-button>
+  <p class="error" *ngIf="error">Ocurrio un error</p>
 </form>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContactService } from '../../../../../../shared/http/contact/contact.service';
 
 @Component({
@@ -8,13 +8,27 @@ import { ContactService } from '../../../../../../shared/http/contact/contact.se
 })
 export class ContactFormComponent {
 
+  error = false;
+
   constructor(
     private contactService: ContactService
   ) { }
 
   contactNow(): void {
     this.contactService.contactNow()
-      .subscribe(value => console.log(value))
+      .subscribe({
+        next: value => console.log(value),
+        error: error => {
+          console.error(error)
+          this.error = true;
+          setTimeout(() => {
+            this.error = false
+          }, 5000);
+        },
+        complete: () => {
+          console.log('completo');
+        }
+      })
   }
 
 }

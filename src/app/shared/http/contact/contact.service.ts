@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,11 @@ export class ContactService {
         headers: {
           'Authorization': '651s6df16fsd156fds51651165'
         }
-      });
+      })
+      .pipe(
+        catchError(val => {
+          return throwError(val);
+        })
+      );
   }
 }
