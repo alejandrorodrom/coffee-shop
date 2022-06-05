@@ -1,0 +1,26 @@
+.content {
+  padding: 4rem 7%;
+}
+
+.title {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  background-color: #13131A;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}

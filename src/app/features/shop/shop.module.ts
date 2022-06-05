@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ShopRoutingModule } from './shop-routing.module';
@@ -18,6 +18,8 @@ import { ButtonBorderComponent } from '../../shared/components/button-border/but
 import { ReviewComponent } from './views/review/review.component';
 import { CardReviewComponent } from '../../shared/components/card-review/card-review.component';
 import { ContactComponent } from './views/contact/contact.component';
+import { ContactFormComponent } from './views/contact/components/contact-form/contact-form.component';
+import { InputModule } from '../../shared/components/input/input.module';
 
 
 @NgModule({
@@ -37,11 +39,13 @@ import { ContactComponent } from './views/contact/contact.component';
     ButtonBorderComponent,
     ReviewComponent,
     CardReviewComponent,
-    ContactComponent
+    ContactComponent,
+    ContactFormComponent
   ],
   imports: [
     CommonModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    InputModule
   ]
 })
 export class ShopModule { }
