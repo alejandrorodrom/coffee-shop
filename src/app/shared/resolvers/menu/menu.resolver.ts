@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { CardMenu } from '../interfaces/card-menu.interface';
+import { CardMenu } from '../../interfaces/card-menu.interface';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({

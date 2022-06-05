@@ -8,8 +8,9 @@ import { ProductComponent } from './views/product/product.component';
 import { AuthGuard } from '../../shared/guards/auth.guard';
 import { AuthChildGuard } from '../../shared/guards/auth-child.guard';
 import { AuthDeactivateGuard } from '../../shared/guards/auth-deactivate.guard';
-import { MenuResolver } from '../../shared/resolvers/menu.resolver';
+import { MenuResolver } from '../../shared/resolvers/menu/menu.resolver';
 import { ReviewComponent } from './views/review/review.component';
+import { ReviewResolver } from '../../shared/resolvers/review/review.resolver';
 
 const routes: Routes = [
   {
@@ -34,10 +35,10 @@ const routes: Routes = [
       },
       {
         path: 'menu',
+        component: MenuComponent,
         resolve: {
           data: MenuResolver
-        },
-        component: MenuComponent
+        }
       },
       {
         path: 'products',
@@ -45,7 +46,10 @@ const routes: Routes = [
       },
       {
         path: 'review',
-        component: ReviewComponent
+        component: ReviewComponent,
+        resolve: {
+          data: ReviewResolver
+        }
       }
     ]
   }

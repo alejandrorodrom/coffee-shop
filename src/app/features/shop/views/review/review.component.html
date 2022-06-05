@@ -1,8 +1,12 @@
 <div class="content">
   <app-title text="customer's review" class="title"></app-title>
   <div class="reviews">
-    <app-card-review></app-card-review>
-    <app-card-review></app-card-review>
-    <app-card-review></app-card-review>
+    <app-card-review
+      *ngFor="let review of reviews"
+      [comment]="review.comment"
+      [image]="review.image"
+      [name]="review.name"
+      [score]="review.score">
+    </app-card-review>
   </div>
 </div>

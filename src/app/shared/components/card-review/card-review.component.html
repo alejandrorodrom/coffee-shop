@@ -1,7 +1,7 @@
 <div class="card">
   <img src="assets/images/quote-img.png" alt="quote">
-  <p class="paragraph">Comment</p>
-  <img src="assets/images/pic-1.png" alt="image" class="image">
-  <h3 class="name">Pedro</h3>
-  <app-stars [score]="4.5"></app-stars>
+  <p class="paragraph">{{ comment }}</p>
+  <img [src]="image" alt="image" class="image">
+  <h3 class="name">{{ name }}</h3>
+  <app-stars [score]="score"></app-stars>
 </div>
