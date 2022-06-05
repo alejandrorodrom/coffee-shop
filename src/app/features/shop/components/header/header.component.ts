@@ -21,7 +21,7 @@ export class HeaderComponent {
       )
       .subscribe(value => this.route = value)
 
-    console.log(this.activatedRoute.snapshot.queryParamMap.get('test'));
+    // console.log(this.activatedRoute.snapshot.queryParamMap.get('test'));
   }
 
   redirectAbout(): void {

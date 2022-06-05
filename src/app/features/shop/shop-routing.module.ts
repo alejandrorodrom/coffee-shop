@@ -9,6 +9,7 @@ import { AuthGuard } from '../../shared/guards/auth.guard';
 import { AuthChildGuard } from '../../shared/guards/auth-child.guard';
 import { AuthDeactivateGuard } from '../../shared/guards/auth-deactivate.guard';
 import { MenuResolver } from '../../shared/resolvers/menu.resolver';
+import { ReviewComponent } from './views/review/review.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'products',
         component: ProductComponent
+      },
+      {
+        path: 'review',
+        component: ReviewComponent
       }
     ]
   }

@@ -11,8 +11,6 @@ export class AuthDeactivateGuard implements CanDeactivate<unknown> {
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log('Can Deactivate');
-    alert('Saliste?')
     return true;
   }
 
