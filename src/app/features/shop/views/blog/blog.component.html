@@ -1,0 +1,12 @@
+<div class="content">
+  <app-title text="our blogs" mode="1" class="title"></app-title>
+  <div class="blogs">
+    <app-card-blog
+      *ngFor="let blog of blogs"
+      [image]="blog.image"
+      [title]="blog.title"
+      [author]="blog.author"
+      [resume]="blog.resume">
+    </app-card-blog>
+  </div>
+</div>

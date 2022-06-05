@@ -20,6 +20,8 @@ import { CardReviewComponent } from '../../shared/components/card-review/card-re
 import { ContactComponent } from './views/contact/contact.component';
 import { ContactFormComponent } from './views/contact/components/contact-form/contact-form.component';
 import { InputModule } from '../../shared/components/input/input.module';
+import { BlogComponent } from './views/blog/blog.component';
+import { CardBlogComponent } from '../../shared/components/card-blog/card-blog.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { InputModule } from '../../shared/components/input/input.module';
     ReviewComponent,
     CardReviewComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    BlogComponent,
+    CardBlogComponent
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,8 @@ import { MenuResolver } from '../../shared/resolvers/menu/menu.resolver';
 import { ReviewComponent } from './views/review/review.component';
 import { ReviewResolver } from '../../shared/resolvers/review/review.resolver';
 import { ContactComponent } from './views/contact/contact.component';
+import { BlogComponent } from './views/blog/blog.component';
+import { BlogResolver } from '../../shared/resolvers/blog/blog.resolver';
 
 const routes: Routes = [
   {
@@ -55,6 +57,13 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'blog',
+        component: BlogComponent,
+        resolve: {
+          data: BlogResolver
+        }
       }
     ]
   }
