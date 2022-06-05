@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../../../shared/http/login/login.service';
+import { UserService } from '../../../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService,
+    private userService: UserService
+  ) { }
 
-  ngOnInit(): void {
+  login(): void {
+    this.loginService.login()
+      .subscribe({
+        next: value => {
+          this.userService.create(value.token);
+          console.log(value);
+        },
+        error: err => console.error(err),
+        complete: () => console.log('Completo')
+      })
   }
-
 }
