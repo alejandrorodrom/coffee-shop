@@ -17,6 +17,7 @@ import { StarsComponent } from '../../shared/components/stars/stars.component';
 import { ButtonBorderComponent } from '../../shared/components/button-border/button-border.component';
 import { ReviewComponent } from './views/review/review.component';
 import { CardReviewComponent } from '../../shared/components/card-review/card-review.component';
+import { ContactComponent } from './views/contact/contact.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CardReviewComponent } from '../../shared/components/card-review/card-re
     StarsComponent,
     ButtonBorderComponent,
     ReviewComponent,
-    CardReviewComponent
+    CardReviewComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
