@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { CanActivateChild, Router } from '@angular/router';
-import { UserService } from '../services/user/user.service';
+import { UserService } from '../../services/user/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthChildGuard implements CanActivateChild {
+export class ShopGuard implements CanActivateChild {
 
   constructor(
     private userService: UserService,
@@ -15,10 +15,8 @@ export class AuthChildGuard implements CanActivateChild {
 
   canActivateChild(): boolean {
     const token = !!this.userService.token?.length;
-    console.log(this.userService.token);
-    console.log(token);
-    if (!token) {
-      this.router.navigateByUrl('auth');
+    if (token) {
+      this.router.navigateByUrl('home');
       return false;
     }
     return true;

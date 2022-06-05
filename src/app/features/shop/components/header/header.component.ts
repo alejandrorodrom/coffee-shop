@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { UserService } from '../../../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService
   ) {
     this.router.events
       .pipe(
@@ -27,6 +29,11 @@ export class HeaderComponent {
   redirectAbout(): void {
     this.router.navigateByUrl('/about');
     // this.router.navigate(['/about', 'detail']);
+  }
+
+  logout(): void {
+    this.userService.destroy();
+    this.router.navigateByUrl('/auth')
   }
 
 }
