@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../../../../../../shared/http/contact/contact.service';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent {
 
-  constructor() { }
+  constructor(
+    private contactService: ContactService
+  ) { }
 
-  ngOnInit(): void {
+  contactNow(): void {
+    this.contactService.contactNow()
+      .subscribe(value => console.log(value))
   }
 
 }
