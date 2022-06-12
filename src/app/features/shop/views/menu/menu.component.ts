@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardMenu } from '../../../../shared/interfaces/card-menu.interface';
+import { Menu } from '../../../../shared/interfaces/menu.interface';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  menus: CardMenu[] = [];
+  menus: Menu[] = [];
 
   constructor(
     private activateRoute: ActivatedRoute

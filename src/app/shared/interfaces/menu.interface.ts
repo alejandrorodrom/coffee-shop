@@ -1,4 +1,4 @@
-export interface CardMenu {
+export interface Menu {
   image: string;
   name: string;
   price: number;
