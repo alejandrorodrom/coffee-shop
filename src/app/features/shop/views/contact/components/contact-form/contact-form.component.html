@@ -1,9 +1,9 @@
-<form class="form">
+<form class="form" (ngSubmit)="contactNow()">
   <h3 class="title">GET IN TOUCH</h3>
-  <app-input type="text" placeholder="name" icon="fas fa-user"></app-input>
-  <app-input type="email" placeholder="email" icon="fas fa-at"></app-input>
-  <app-input type="number" placeholder="number" icon="fas fa-phone"></app-input>
-  <app-button (click)="contactNow()">Contact Now</app-button>
+  <app-input type="text" placeholder="name" icon="fas fa-user" [(ngModel)]="contact.name" (input)="validate()" name="name"></app-input>
+  <app-input type="email" placeholder="email" icon="fas fa-at" [(ngModel)]="contact.email" name="email"></app-input>
+  <app-input type="number" placeholder="number" icon="fas fa-phone" [(ngModel)]="contact.phone" name="phone"></app-input>
+  <app-button type="submit">Contact Now</app-button>
   <p class="error" *ngIf="error">Ocurrio un error</p>
 </form>
 
