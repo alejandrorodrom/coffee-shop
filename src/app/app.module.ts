@@ -8,11 +8,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiInterceptor } from './shared/interceptors/api/api.interceptor';
 import { CommonModule } from '@angular/common';
 import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor';
+import { ModalErrorComponent } from './shared/components/modal-error/modal-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ModalErrorComponent
   ],
   imports: [
     BrowserModule,
