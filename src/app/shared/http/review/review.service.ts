@@ -15,7 +15,7 @@ export class ReviewService {
 
   getReview(): Observable<ReviewModel[]> {
     return this.http
-      .get<Review[]>('https://coffee-shop-backend-galaxy.herokuapp.com/reviews')
+      .get<Review[]>('reviews')
       .pipe(
         map(value => value.map(review => new ReviewModel(review)))
       );

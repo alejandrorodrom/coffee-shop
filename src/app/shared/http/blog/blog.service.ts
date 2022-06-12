@@ -15,7 +15,7 @@ export class BlogService {
 
   getBlogs(): Observable<BlogModel[]> {
     return this.http
-      .get<Blog[]>('https://coffee-shop-backend-galaxy.herokuapp.com/blogs')
+      .get<Blog[]>('blogs')
       .pipe(
         map(value => value.map(blog => new BlogModel(blog)))
       );

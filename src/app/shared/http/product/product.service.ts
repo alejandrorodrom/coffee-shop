@@ -15,7 +15,7 @@ export class ProductService {
 
   getProduct(): Observable<ProductModel[]> {
     return this.http
-      .get<Product[]>('https://coffee-shop-backend-galaxy.herokuapp.com/products')
+      .get<Product[]>('products')
       .pipe(
         map(
           value => value.map(product => new ProductModel(product))

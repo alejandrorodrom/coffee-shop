@@ -15,7 +15,7 @@ export class MenuService {
 
   getMenus(): Observable<MenuModel[]> {
     return this.http
-      .get<Menu[]>('https://coffee-shop-backend-galaxy.herokuapp.com/menus')
+      .get<Menu[]>('menus')
       .pipe(
         map(
           value => value.map(menu => new MenuModel(menu))

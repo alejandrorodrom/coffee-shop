@@ -13,7 +13,7 @@ export class LoginService {
 
   login(): Observable<{ token: string, user: string, email: string }> {
     return this.http
-      .post<{ token: string, user: string, email: string }>('https://coffee-shop-backend-galaxy.herokuapp.com/auth', {
+      .post<{ token: string, user: string, email: string }>('auth', {
         email: 'test@test.com',
         password: 'test'
       })

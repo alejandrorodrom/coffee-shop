@@ -14,7 +14,7 @@ export class ContactService {
 
   contactNow(): Observable<{ message: string }> {
     return this.http
-      .post<{ message: string }>('https://coffee-shop-backend-galaxy.herokuapp.com/contact', {
+      .post<{ message: string }>('contact', {
         'name': 'Pedro',
         'email': 'test@test.com',
         'phone': 156165161461
