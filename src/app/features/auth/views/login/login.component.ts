@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../../../shared/http/login/login.service';
 import { UserService } from '../../../../shared/services/user/user.service';
 import { Router } from '@angular/router';
+import { User } from '../../../../shared/interfaces/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  user = {
+  user: User = {
     email: '',
     password: ''
   }
@@ -22,7 +23,7 @@ export class LoginComponent {
   ) { }
 
   login(): void {
-    this.loginService.login()
+    this.loginService.login(this.user)
       .subscribe({
         next: value => {
           this.userService.create(value.token);

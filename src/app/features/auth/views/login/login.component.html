@@ -1,6 +1,18 @@
-<div class="content">
+<form class="content" (ngSubmit)="login()">
   <app-title text="login"></app-title>
-  <app-input placeholder="email" type="email" icon="fas fa-user" [(ngModel)]="user.email" name="email"></app-input>
-  <app-input placeholder="password" type="password" icon="fas fa-key" [(ngModel)]="user.password" name="password"></app-input>
-  <app-button (click)="login()">Go</app-button>
-</div>
+  <app-input
+    placeholder="email"
+    type="email"
+    icon="fas fa-user"
+    [(ngModel)]="user.email"
+    name="email">
+  </app-input>
+  <app-input
+    placeholder="password"
+    type="password"
+    icon="fas fa-key"
+    [(ngModel)]="user.password"
+    name="password">
+  </app-input>
+  <app-button type="submit">Go</app-button>
+</form>
