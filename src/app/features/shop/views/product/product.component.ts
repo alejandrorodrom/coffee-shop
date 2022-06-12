@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardProduct } from '../../../../shared/interfaces/card-product.interface';
+import { ProductModel } from '../../../../shared/models/product.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,33 +9,14 @@ import { CardProduct } from '../../../../shared/interfaces/card-product.interfac
 })
 export class ProductComponent implements OnInit {
 
-  readonly products: CardProduct[] = [
-    {
-      image: 'assets/images/product-1.png',
-      name: 'Fresh Coffee',
-      score: 2.5,
-      price: 16,
-      beforePrice: 19
-    },
-    {
-      image: 'assets/images/product-2.png',
-      name: 'Fresh Coffee 2',
-      score: 3.5,
-      price: 19,
-      beforePrice: 25
-    },
-    {
-      image: 'assets/images/product-3.png',
-      name: 'Fresh Coffee 3',
-      score: 5,
-      price: 29,
-      beforePrice: 50
-    }
-  ];
+  products: ProductModel[] = [];
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({data}) => this.products = data);
   }
 
 }

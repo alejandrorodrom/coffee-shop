@@ -14,6 +14,7 @@ import { ReviewResolver } from '../../shared/resolvers/review/review.resolver';
 import { ContactComponent } from './views/contact/contact.component';
 import { BlogComponent } from './views/blog/blog.component';
 import { BlogResolver } from '../../shared/resolvers/blog/blog.resolver';
+import { ProductResolver } from '../../shared/resolvers/product/product.resolver';
 
 const routes: Routes = [
   {
@@ -45,7 +46,10 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductComponent
+        component: ProductComponent,
+        resolve: {
+          data: ProductResolver
+        }
       },
       {
         path: 'review',
