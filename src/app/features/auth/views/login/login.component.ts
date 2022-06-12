@@ -22,6 +22,9 @@ export class LoginComponent {
     private router: Router
   ) { }
 
+  // user: test@test.com
+  // password: test
+
   login(): void {
     this.loginService.login(this.user)
       .subscribe({
