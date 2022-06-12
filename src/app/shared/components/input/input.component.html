@@ -1,4 +1,4 @@
 <div class="content">
   <span [class]="icon"></span>
-  <input class="input" [type]="type" [placeholder]="placeholder">
+  <input class="input" (input)="onInput($event)" [type]="type" [placeholder]="placeholder">
 </div>

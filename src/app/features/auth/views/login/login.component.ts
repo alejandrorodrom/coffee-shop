@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginService } from '../../../../shared/http/login/login.service';
 import { UserService } from '../../../../shared/services/user/user.service';
 import { Router } from '@angular/router';
@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  user = {
+    email: '',
+    password: ''
+  }
 
   constructor(
     private loginService: LoginService,
