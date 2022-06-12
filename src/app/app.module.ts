@@ -14,7 +14,7 @@ import { ModalErrorComponent } from './shared/components/modal-error/modal-error
   declarations: [
     AppComponent,
     NotFoundComponent,
-    ModalErrorComponent
+    ModalErrorComponent,
   ],
   imports: [
     BrowserModule,

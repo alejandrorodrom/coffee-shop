@@ -4,15 +4,22 @@
     placeholder="email"
     type="email"
     icon="fas fa-user"
+    required
     [(ngModel)]="user.email"
     name="email">
   </app-input>
   <app-input
+    #password="ngModel"
+    id="password"
     placeholder="password"
     type="password"
     icon="fas fa-key"
+    appStrongPassword
+    required
     [(ngModel)]="user.password"
     name="password">
   </app-input>
+  <p class="fs-3 text-danger" *ngIf="password.errors?.['strongPassword'] && (password.dirty || password.touched)">Contraseña no tan fuerte</p>
+  <p class="fs-3 text-danger" *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">La contraseña es requerida</p>
   <app-button type="submit">Go</app-button>
 </form>

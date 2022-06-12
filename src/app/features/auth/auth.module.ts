@@ -8,12 +8,14 @@ import { LoginComponent } from './views/login/login.component';
 import { TitleModule } from '../../shared/components/title/title.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
 import { FormsModule } from '@angular/forms';
+import { StrongPasswordDirective } from '../../shared/validations-template/strong-password/strong-password.directive';
 
 
 @NgModule({
   declarations: [
     AuthComponent,
-    LoginComponent
+    LoginComponent,
+    StrongPasswordDirective
   ],
   imports: [
     CommonModule,
