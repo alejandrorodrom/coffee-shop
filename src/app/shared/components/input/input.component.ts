@@ -22,8 +22,8 @@ export class InputComponent implements ControlValueAccessor {
   value!: string;
   isDisabled!: boolean;
 
-  onChange!: (value: string) => void;
-  onTouched!: () => void;
+  onChange: any = () => {};
+  onTouched: any = () => {};
 
   constructor() { }
 

@@ -8,8 +8,9 @@ import { LoginComponent } from './views/login/login.component';
 import { TitleModule } from '../../shared/components/title/title.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StrongPasswordDirective } from '../../shared/validations-template/strong-password/strong-password.directive';
+import { StrongPasswordDirective } from '../../shared/validators/strong-password/strong-password.directive';
 import { RegisterComponent } from './views/register/register.component';
+import { ControlErrorModule } from '../../shared/components/control-error/control-error.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { RegisterComponent } from './views/register/register.component';
     TitleModule,
     ButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ControlErrorModule
   ]
 })
 export class AuthModule { }

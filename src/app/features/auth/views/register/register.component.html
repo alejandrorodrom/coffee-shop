@@ -6,7 +6,24 @@
     icon="fas fa-user"
     formControlName="email">
   </app-input>
-  <app-input placeholder="password" type="password" icon="fas fa-key"></app-input>
-  <app-input placeholder="repeat password" type="password" icon="fas fa-key"></app-input>
+  <app-control-error [show]="isEmailError" [errors]="emailErrors" [messages]="emailErrorMessage"></app-control-error>
+
+  <app-input
+    placeholder="password"
+    type="password"
+    icon="fas fa-key" formControlName="password">
+  </app-input>
+  <app-control-error [show]="isPasswordError" [errors]="passwordErrors" [messages]="passwordErrorMessage"></app-control-error>
+
+  <app-input
+    placeholder="repeat password"
+    type="password"
+    icon="fas fa-key"
+    formControlName="repeatPassword">
+  </app-input>
+  <app-control-error [show]="isRepeatPasswordError" [errors]="repeatPasswordErrors" [messages]="repeatPasswordErrorMessage"></app-control-error>
+
+  <app-control-error [show]="isPasswordsError" [errors]="formErrors" [messages]="formErrorMessage"></app-control-error>
+
   <app-button type="submit">Save</app-button>
 </form>
