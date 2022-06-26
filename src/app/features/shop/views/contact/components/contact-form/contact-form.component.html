@@ -1,14 +1,26 @@
-<form class="form" [formGroup]="contactFormGroup" (ngSubmit)="contactNow()">
+<form class="form" [formGroup]="presenter.contactFormGroup" (ngSubmit)="contactNow()">
   <h3 class="title">GET IN TOUCH</h3>
   <app-input type="text" placeholder="name" icon="fas fa-user" formControlName="name"></app-input>
-  <app-control-error [show]="isNameError" [errors]="nameErrors" [messages]="nameErrorMessage"></app-control-error>
+  <app-control-error
+    [show]="presenter.isNameError"
+    [errors]="presenter.nameErrors"
+    [messages]="presenter.nameErrorMessage">
+  </app-control-error>
 
   <app-input type="email" placeholder="email" icon="fas fa-at" formControlName="email"></app-input>
-  <app-control-error [show]="isEmailError" [errors]="emailErrors" [messages]="emailErrorMessage"></app-control-error>
+  <app-control-error
+    [show]="presenter.isEmailError"
+    [errors]="presenter.emailErrors"
+    [messages]="presenter.emailErrorMessage">
+  </app-control-error>
 
   <app-input type="text" placeholder="number" icon="fas fa-phone" formControlName="phone"></app-input>
-  <app-control-error [show]="isPhoneError" [errors]="phoneErrors" [messages]="phoneErrorMessage"></app-control-error>
+  <app-control-error
+    [show]="presenter.isPhoneError"
+    [errors]="presenter.phoneErrors"
+    [messages]="presenter.phoneErrorMessage">
+  </app-control-error>
 
-  <app-button type="submit" [disabled]="contactFormGroup.invalid">Contact Now</app-button>
+  <app-button type="submit" [disabled]="presenter.contactFormGroup.invalid">Contact Now</app-button>
 </form>
 
