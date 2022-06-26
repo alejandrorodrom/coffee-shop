@@ -7,7 +7,7 @@ import { InputModule } from '../../shared/components/input/input.module';
 import { LoginComponent } from './views/login/login.component';
 import { TitleModule } from '../../shared/components/title/title.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StrongPasswordDirective } from '../../shared/validations-template/strong-password/strong-password.directive';
 import { RegisterComponent } from './views/register/register.component';
 
@@ -25,7 +25,8 @@ import { RegisterComponent } from './views/register/register.component';
     InputModule,
     TitleModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }

@@ -1,6 +1,11 @@
-<form class="content">
+<form class="content" [formGroup]="userRegisterForm">
   <app-title text="register"></app-title>
-  <app-input placeholder="email" type="email" icon="fas fa-user"></app-input>
+  <app-input
+    placeholder="email"
+    type="email"
+    icon="fas fa-user"
+    formControlName="email">
+  </app-input>
   <app-input placeholder="password" type="password" icon="fas fa-key"></app-input>
   <app-input placeholder="repeat password" type="password" icon="fas fa-key"></app-input>
   <app-button type="submit">Save</app-button>
