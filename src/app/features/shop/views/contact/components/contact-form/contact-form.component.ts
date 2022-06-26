@@ -32,9 +32,6 @@ export class ContactFormComponent {
           setTimeout(() => {
             this.error = false
           }, 5000);
-        },
-        complete: () => {
-          console.log('completo');
         }
       })
   }

@@ -9,6 +9,7 @@ import { ApiInterceptor } from './shared/interceptors/api/api.interceptor';
 import { CommonModule } from '@angular/common';
 import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor';
 import { ModalErrorComponent } from './shared/components/modal-error/modal-error.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModalErrorComponent } from './shared/components/modal-error/modal-error
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

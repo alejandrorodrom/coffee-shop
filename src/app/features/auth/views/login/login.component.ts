@@ -31,10 +31,8 @@ export class LoginComponent {
         next: value => {
           this.userService.create(value.token);
           this.router.navigateByUrl('home');
-          console.log(value);
         },
-        error: err => console.error(err),
-        complete: () => console.log('Completo')
+        error: err => console.error(err)
       })
   }
 }

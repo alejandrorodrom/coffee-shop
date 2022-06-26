@@ -5,6 +5,18 @@
   font-size: 62.5%;
 }
 
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: white;
+}
+
 body {
   background-color: black !important;
 }

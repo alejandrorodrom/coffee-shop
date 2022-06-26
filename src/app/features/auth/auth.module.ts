@@ -9,13 +9,15 @@ import { TitleModule } from '../../shared/components/title/title.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
 import { FormsModule } from '@angular/forms';
 import { StrongPasswordDirective } from '../../shared/validations-template/strong-password/strong-password.directive';
+import { RegisterComponent } from './views/register/register.component';
 
 
 @NgModule({
   declarations: [
     AuthComponent,
     LoginComponent,
-    StrongPasswordDirective
+    StrongPasswordDirective,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

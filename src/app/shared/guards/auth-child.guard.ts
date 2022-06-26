@@ -15,8 +15,6 @@ export class AuthChildGuard implements CanActivateChild {
 
   canActivateChild(): boolean {
     const token = !!this.userService.token?.length;
-    console.log(this.userService.token);
-    console.log(token);
     if (!token) {
       this.router.navigateByUrl('auth');
       return false;

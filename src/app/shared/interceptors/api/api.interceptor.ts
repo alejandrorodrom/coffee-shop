@@ -24,7 +24,6 @@ export class ApiInterceptor implements HttpInterceptor {
         'Authorization': `${this.userService.token}`
       }
     });
-    console.log(requestClone.url);
     return next.handle(requestClone);
   }
 }
