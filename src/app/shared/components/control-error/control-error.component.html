@@ -1,0 +1,5 @@
+<ng-template [ngIf]="show">
+  <ng-template ngFor let-error [ngForOf]="errorKeys">
+    <p class="fs-3 text-danger">{{ getMessage(error)?.message }}</p>
+  </ng-template>
+</ng-template>
