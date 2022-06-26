@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StrongPasswordDirective } from '../../shared/validators/strong-password/strong-password.directive';
 import { RegisterComponent } from './views/register/register.component';
 import { ControlErrorModule } from '../../shared/components/control-error/control-error.module';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ControlErrorModule } from '../../shared/components/control-error/contro
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    ControlErrorModule
+    ControlErrorModule,
+    MatButtonModule
   ]
 })
 export class AuthModule { }

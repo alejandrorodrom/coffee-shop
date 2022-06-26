@@ -1,4 +1,4 @@
-<form class="content" [formGroup]="userRegisterForm">
+<form class="content" [formGroup]="userRegisterForm" (ngSubmit)="register()">
   <app-title text="register"></app-title>
   <app-input
     placeholder="email"
@@ -25,5 +25,6 @@
 
   <app-control-error [show]="isPasswordsError" [errors]="formErrors" [messages]="formErrorMessage"></app-control-error>
 
-  <app-button type="submit">Save</app-button>
+  <app-button [disabled]="userRegisterForm.invalid" type="submit">Save</app-button>
+  <button class="fs-2 mt-3 align-self-center" mat-raised-button color="accent" type="button" routerLink="/auth/login">Back</button>
 </form>

@@ -3,6 +3,8 @@ import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/f
 import { ControlError } from '../../../../shared/interfaces/error.interface';
 import { PasswordValidator } from '../../../../shared/validators/password/password.validator';
 import { FormControlService } from '../../../../shared/utils/form-control/form-control.service';
+import { AuthService } from '../../../../shared/http/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -115,8 +117,31 @@ export class RegisterComponent {
   ];
 
   constructor(
-    private formControlUtil: FormControlService
+    private formControlUtil: FormControlService,
+    private authService: AuthService,
+    private router: Router
   ) {
+    // setTimeout(() => {
+    //   this.emailControl.clearValidators();
+    //   this.emailControl.updateValueAndValidity();
+    // }, 5000);
+    //
+    // setTimeout(() => {
+    //   this.emailControl.setValidators([
+    //     Validators.required,
+    //     Validators.email
+    //   ]);
+    //   this.emailControl.updateValueAndValidity();
+    // }, 8000);
   }
 
+  register(): void {
+    this.authService.register({ email: this.emailControl.value, password: this.passwordControl.value })
+      .subscribe({
+        next: () => {
+          this.router.navigateByUrl('auth/login');
+        },
+        error: err => console.error(err)
+      })
+  }
 }

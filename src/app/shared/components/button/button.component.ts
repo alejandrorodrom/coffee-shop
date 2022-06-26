@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input() type: 'button' | 'submit' = 'button';
+  @Input() disabled = false;
 
   constructor() { }
 

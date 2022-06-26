@@ -6,7 +6,7 @@ import { User } from '../../interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class AuthService {
 
   constructor(
     private http: HttpClient
@@ -15,6 +15,16 @@ export class LoginService {
   login(user: User): Observable<{ token: string, user: string, email: string }> {
     return this.http
       .post<{ token: string, user: string, email: string }>('auth', user)
+      .pipe(
+        catchError(err => {
+          return throwError(err)
+        })
+      )
+  }
+
+  register(user: User): Observable<{ email: string, token: string }> {
+    return this.http
+      .post<{ token: string, email: string }>('register', user)
       .pipe(
         catchError(err => {
           return throwError(err)

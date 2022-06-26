@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../../../../shared/http/login/login.service';
+import { AuthService } from '../../../../shared/http/auth/auth.service';
 import { UserService } from '../../../../shared/services/user/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../../../shared/interfaces/user.interface';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-auth',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -17,7 +17,7 @@ export class LoginComponent {
   }
 
   constructor(
-    private loginService: LoginService,
+    private authService: AuthService,
     private userService: UserService,
     private router: Router
   ) { }
@@ -26,7 +26,7 @@ export class LoginComponent {
   // password: test
 
   login(): void {
-    this.loginService.login(this.user)
+    this.authService.login(this.user)
       .subscribe({
         next: value => {
           this.userService.create(value.token);
