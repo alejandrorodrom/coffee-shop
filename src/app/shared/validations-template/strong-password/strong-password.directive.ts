@@ -13,7 +13,7 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@an
 })
 export class StrongPasswordDirective implements Validator {
 
-  @Input() enable = true;
+  @Input('appStrongPassword') enable = true;
 
   constructor() { }
 
