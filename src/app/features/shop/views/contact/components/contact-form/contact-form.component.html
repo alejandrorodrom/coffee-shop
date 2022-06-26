@@ -1,9 +1,14 @@
-<form class="form" (ngSubmit)="contactNow()">
+<form class="form" [formGroup]="contactFormGroup" (ngSubmit)="contactNow()">
   <h3 class="title">GET IN TOUCH</h3>
-  <app-input type="text" placeholder="name" icon="fas fa-user" [(ngModel)]="contact.name" (input)="validate()" name="name"></app-input>
-  <app-input type="email" placeholder="email" icon="fas fa-at" [(ngModel)]="contact.email" name="email"></app-input>
-  <app-input type="number" placeholder="number" icon="fas fa-phone" [(ngModel)]="contact.phone" name="phone"></app-input>
-  <app-button type="submit">Contact Now</app-button>
-  <p class="error" *ngIf="error">Ocurrio un error</p>
+  <app-input type="text" placeholder="name" icon="fas fa-user" formControlName="name"></app-input>
+  <app-control-error [show]="isNameError" [errors]="nameErrors" [messages]="nameErrorMessage"></app-control-error>
+
+  <app-input type="email" placeholder="email" icon="fas fa-at" formControlName="email"></app-input>
+  <app-control-error [show]="isEmailError" [errors]="emailErrors" [messages]="emailErrorMessage"></app-control-error>
+
+  <app-input type="text" placeholder="number" icon="fas fa-phone" formControlName="phone"></app-input>
+  <app-control-error [show]="isPhoneError" [errors]="phoneErrors" [messages]="phoneErrorMessage"></app-control-error>
+
+  <app-button type="submit" [disabled]="contactFormGroup.invalid">Contact Now</app-button>
 </form>
 

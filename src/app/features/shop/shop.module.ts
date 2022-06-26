@@ -22,8 +22,9 @@ import { BlogComponent } from './views/blog/blog.component';
 import { CardBlogComponent } from '../../shared/components/card-blog/card-blog.component';
 import { TitleModule } from '../../shared/components/title/title.module';
 import { ButtonModule } from '../../shared/components/button/button.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalSuccessComponent } from './views/contact/components/modal-success/modal-success.component';
+import { ControlErrorModule } from 'src/app/shared/components/control-error/control-error.module';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import { ModalSuccessComponent } from './views/contact/components/modal-success/
     InputModule,
     TitleModule,
     ButtonModule,
-    FormsModule
+    ControlErrorModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ShopModule { }
