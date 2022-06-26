@@ -21,6 +21,9 @@
     [messages]="presenter.phoneErrorMessage">
   </app-control-error>
 
-  <app-button type="submit" [disabled]="presenter.contactFormGroup.invalid">Contact Now</app-button>
+  <app-button type="submit" [disabled]="presenter.contactFormGroup.invalid">
+    <mat-spinner *ngIf="loading else text" diameter="20" color="warn"></mat-spinner>
+    <ng-template #text>Contact Now</ng-template>
+  </app-button>
 </form>
 

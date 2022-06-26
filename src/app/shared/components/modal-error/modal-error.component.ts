@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Modal } from 'bootstrap';
+import { tap } from 'rxjs';
 import { ErrorService } from '../../services/error/error.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { ErrorService } from '../../services/error/error.service';
   styleUrls: ['./modal-error.component.css']
 })
 export class ModalErrorComponent implements OnInit {
+
+  private count = 0;
 
   message = '';
 
@@ -18,9 +21,21 @@ export class ModalErrorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.errorService.errorSubject.subscribe((value: string) => {
-      this.message = value;
-      this.openModal();
+    this.errorService.errorSubject
+    .pipe(
+      tap(() => {
+        setTimeout(() => {
+          this.count = 0;
+        }, 500)
+      })
+    )
+    .subscribe((value: string) => {
+      this.count++;
+
+      if(this.count < 2) {
+        this.message = value;
+        this.openModal();
+      }
     })
   }
 

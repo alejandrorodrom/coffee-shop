@@ -25,6 +25,7 @@ import { ButtonModule } from '../../shared/components/button/button.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalSuccessComponent } from './views/contact/components/modal-success/modal-success.component';
 import { ControlErrorModule } from 'src/app/shared/components/control-error/control-error.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ControlErrorModule } from 'src/app/shared/components/control-error/cont
     ButtonModule,
     ControlErrorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ShopModule { }

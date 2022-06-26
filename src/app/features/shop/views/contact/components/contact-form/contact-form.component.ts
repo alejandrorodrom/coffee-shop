@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ContactService } from '../../../../../../shared/http/contact/contact.service';
 import { SuccessService } from '../../../../../../shared/services/success/success.service';
 import { ContactFormPresenter } from './contact-form.presenter';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,6 +12,8 @@ import { ContactFormPresenter } from './contact-form.presenter';
 })
 export class ContactFormComponent {
 
+  loading = false;
+
   constructor(
     private contactService: ContactService,
     private successService: SuccessService,
@@ -19,7 +22,11 @@ export class ContactFormComponent {
    }
 
   contactNow(): void {
+    this.loading = true;
     this.contactService.contactNow(this.presenter.contactFormGroup.value)
+      .pipe(
+        finalize(() => this.loading = false)
+      )
       .subscribe({
         next: value => this.successService.showSuccess(value.message),
         error: error => {
