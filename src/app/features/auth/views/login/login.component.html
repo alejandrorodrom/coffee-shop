@@ -1,26 +1,22 @@
-<form class="content" (ngSubmit)="login()">
+<form class="content" [formGroup]="userFormGroup" (ngSubmit)="login()">
   <app-title text="login"></app-title>
   <app-input
     placeholder="email"
     type="email"
     icon="fas fa-user"
-    required
-    [(ngModel)]="user.email"
-    name="email">
+    formControlName="email">
   </app-input>
+  <app-control-error [show]="isEmailError" [errors]="emailErrors" [messages]="emailErrorMessage"></app-control-error>
+
   <app-input
-    #password="ngModel"
     id="password"
     placeholder="password"
     type="password"
     icon="fas fa-key"
-    [appStrongPassword]="true"
-    required
-    [(ngModel)]="user.password"
-    name="password">
+    formControlName="password">
   </app-input>
-  <p class="fs-3 text-danger" *ngIf="password.errors?.['strongPassword'] && (password.dirty || password.touched)">Contraseña no tan fuerte</p>
-  <p class="fs-3 text-danger" *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">La contraseña es requerida</p>
-  <app-button type="submit">Go</app-button>
+  <app-control-error [show]="isPasswordError" [errors]="passwordErrors" [messages]="passwordErrorMessage"></app-control-error>
+
+  <app-button type="submit" [disabled]="userFormGroup.invalid">Go</app-button>
   <button class="fs-2 mt-3 align-self-center" mat-raised-button color="accent" type="button" routerLink="/auth/register">Register</button>
 </form>

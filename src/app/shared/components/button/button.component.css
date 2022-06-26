@@ -8,3 +8,9 @@
   cursor: pointer;
   border: none;
 }
+
+.button:disabled, .button[disabled] {
+  color: white;
+  background: gray;
+  cursor: not-allowed;
+}
