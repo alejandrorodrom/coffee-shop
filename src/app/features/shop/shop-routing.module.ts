@@ -15,6 +15,7 @@ import { ContactComponent } from './views/contact/contact.component';
 import { BlogComponent } from './views/blog/blog.component';
 import { BlogResolver } from '../../shared/resolvers/blog/blog.resolver';
 import { ProductResolver } from '../../shared/resolvers/product/product.resolver';
+import { CartComponent } from './views/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,10 @@ const routes: Routes = [
         resolve: {
           data: BlogResolver
         }
+      },
+      {
+        path: 'cart',
+        component: CartComponent
       }
     ]
   }

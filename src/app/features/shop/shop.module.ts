@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalSuccessComponent } from './views/contact/components/modal-success/modal-success.component';
 import { ControlErrorModule } from 'src/app/shared/components/control-error/control-error.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CartComponent } from './views/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ContactFormComponent,
     BlogComponent,
     CardBlogComponent,
-    ModalSuccessComponent
+    ModalSuccessComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
