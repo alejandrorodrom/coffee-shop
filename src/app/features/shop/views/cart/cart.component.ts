@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartStore } from '../../../../shared/stores/cart/cart.store';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -17,15 +18,23 @@ export class CartComponent implements OnInit {
     total: number;
   }[] = [];
 
+  items: FormArray = this.formBuilder.array([]);
+  form: FormGroup = this.formBuilder.group({ items: this.items });
+
   total = 0;
 
   constructor(
-    private cartStore: CartStore
+    private cartStore: CartStore,
+    private formBuilder: FormBuilder
   ) {
     console.log(this.cartStore.state);
   }
 
   ngOnInit(): void {
+    this.cartStore.state.items.forEach(value => {
+      this.items.push(this.formBuilder.group({ quantity: [ value.quantity, [] ] }))
+    });
+
     this.loadData();
   }
 
