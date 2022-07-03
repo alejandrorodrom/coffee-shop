@@ -26,6 +26,7 @@ export class MenuComponent {
   }
 
   addCart(menu: Item): void {
-    this.cartService.addCart(menu);
+    // this.cartService.addCart(menu);
+    this.cartService.addCartNgxs(menu);
   }
 }

@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
 import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor';
 import { ModalErrorComponent } from './shared/components/modal-error/modal-error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxsModule } from '@ngxs/store';
+import { CartNgxsState } from './shared/stores/cart-ngxs/cart-ngxs.state';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxsModule.forRoot(
+      [CartNgxsState],
+      {
+        developmentMode: !environment.production
+      }
+    )
   ],
   providers: [
     {

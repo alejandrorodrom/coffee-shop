@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { UserService } from '../../../../shared/services/user/user.service';
 import { CartStore } from '../../../../shared/stores/cart/cart.store';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
-    private cartStore: CartStore
+    private cartStore: CartStore,
+    private store: Store
   ) {
     this.router.events
       .pipe(
@@ -31,7 +33,10 @@ export class HeaderComponent implements OnDestroy {
 
     // console.log(this.activatedRoute.snapshot.queryParamMap.get('test'));
 
-    const subscribe = this.cartStore.items$
+    // const subscribe = this.cartStore.items$
+    //   .subscribe(value => this.cartQuantity = value.length);
+
+    const subscribe = this.store.select(state => state.cart.items)
       .subscribe(value => this.cartQuantity = value.length);
     this.subscription.add(subscribe);
   }
