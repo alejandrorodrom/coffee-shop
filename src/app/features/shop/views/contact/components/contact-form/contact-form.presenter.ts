@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ControlError } from '../../../../../../shared/interfaces/error.interface';
 import { FormControlService } from '../../../../../../shared/utils/form-control/form-control.service';
+import { ContactStore } from '../../../../../../shared/stores/contact/contact.store';
+import { Store } from '@ngxs/store';
+import { ContactSetAllActionNgxs } from '../../../../../../shared/stores/contact-ngxs/contact-ngxs.actions';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Injectable()
 export class ContactFormPresenter {
@@ -47,24 +51,26 @@ export class ContactFormPresenter {
   }
 
   readonly nameErrorMessage: ControlError[] = [
-    { validator: 'required', message: 'El nombre es obligatorio' }
+    {validator: 'required', message: 'El nombre es obligatorio'}
   ];
 
   readonly emailErrorMessage: ControlError[] = [
-    { validator: 'required', message: 'El email es obligatorio' },
-    { validator: 'email', message: 'El email es invalido' }
+    {validator: 'required', message: 'El email es obligatorio'},
+    {validator: 'email', message: 'El email es invalido'}
   ];
 
   readonly phoneErrorMessage: ControlError[] = [
-    { validator: 'required', message: 'El telefono es obligatorio' },
-    { validator: 'maxlength', message: 'El telefono tiene como maximo 13 digitos' },
-    { validator: 'minlength', message: 'El telefono tiene como minimo 7 digitos' },
-    { validator: 'pattern', message: 'El telefono es invalido' }
-  ]
+    {validator: 'required', message: 'El telefono es obligatorio'},
+    {validator: 'maxlength', message: 'El telefono tiene como maximo 13 digitos'},
+    {validator: 'minlength', message: 'El telefono tiene como minimo 7 digitos'},
+    {validator: 'pattern', message: 'El telefono es invalido'}
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
-    private formControlService: FormControlService
+    private formControlService: FormControlService,
+    private contactStore: ContactStore,
+    private store: Store
   ) {
     this.contactFormGroup = this.formBuilder.group({
       name: ['', Validators.required],
@@ -79,5 +85,29 @@ export class ContactFormPresenter {
         Validators.pattern(/^\x2b[0-9, $]*$/)
       ]]
     });
+
+    // this.contactFormGroup.setValue({
+    //   name: this.contactStore.state.name,
+    //   email: this.contactStore.state.email,
+    //   phone: this.contactStore.state.phone
+    // });
+
+    this.contactFormGroup.setValue({
+      name: this.store.selectSnapshot(state => state.contact.name),
+      email: this.store.selectSnapshot(state => state.contact.email),
+      phone: this.store.selectSnapshot(state => state.contact.phone)
+    });
+
+    console.log(this.store.selectSnapshot(state => state));
+
+    this.contactFormGroup.valueChanges
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe(value => {
+        this.store.dispatch(new ContactSetAllActionNgxs(value));
+        // this.contactStore.dispatch(new ContactSetAllAction(value));
+      });
   }
 }

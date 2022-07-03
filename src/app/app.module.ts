@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsModule } from '@ngxs/store';
 import { CartNgxsState } from './shared/stores/cart-ngxs/cart-ngxs.state';
 import { environment } from '../environments/environment';
+import { ContactNgxsState } from './shared/stores/contact-ngxs/contact-ngxs.state';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxsModule.forRoot(
-      [CartNgxsState],
+      [CartNgxsState, ContactNgxsState],
       {
         developmentMode: !environment.production
       }

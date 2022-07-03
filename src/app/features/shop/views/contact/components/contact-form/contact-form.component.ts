@@ -19,7 +19,7 @@ export class ContactFormComponent {
     private successService: SuccessService,
     public presenter: ContactFormPresenter
   ) {
-   }
+  }
 
   contactNow(): void {
     this.loading = true;
