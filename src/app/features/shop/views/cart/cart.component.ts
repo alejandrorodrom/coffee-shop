@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartStore } from '../../../../shared/stores/cart/cart.store';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { debounceTime } from 'rxjs';
+import { CartUpdateAction } from '../../../../shared/stores/cart/cart.actions';
 
 @Component({
   selector: 'app-cart',
@@ -32,10 +34,28 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartStore.state.items.forEach(value => {
-      this.items.push(this.formBuilder.group({ quantity: [ value.quantity, [] ] }))
+      this.items.push(this.formBuilder.group({ id: [ value.id, [] ], quantity: [ value.quantity, [] ] }))
     });
 
     this.loadData();
+
+    this.items.valueChanges
+      .pipe(
+        debounceTime(500)
+      )
+      .subscribe((value: { id: number, quantity: number }[]) => {
+        this.cartStore.state.items.forEach(elem => {
+          const formItem = value.find(v => v.id === elem.id);
+          if (elem.quantity !== formItem!.quantity) {
+            this.cartStore.dispatch(new CartUpdateAction({
+              id: elem.id, item: {
+                ...elem,
+                quantity: formItem!.quantity
+              }
+            }))
+          }
+        });
+      });
   }
 
   loadData(): void {
