@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter, Subscription } from 'rxjs';
 import { UserService } from '../../../../shared/services/user/user.service';
+import { CartStore } from '../../../../shared/stores/cart/cart.store';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
 
   route!: NavigationEnd;
+
+  cartQuantity = 0;
+
+  private subscription = new Subscription();
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private cartStore: CartStore
   ) {
     this.router.events
       .pipe(
@@ -24,6 +30,10 @@ export class HeaderComponent {
       .subscribe(value => this.route = value)
 
     // console.log(this.activatedRoute.snapshot.queryParamMap.get('test'));
+
+    const subscribe = this.cartStore.items$
+      .subscribe(value => this.cartQuantity = value.length);
+    this.subscription.add(subscribe);
   }
 
   redirectAbout(): void {
@@ -34,6 +44,10 @@ export class HeaderComponent {
   logout(): void {
     this.userService.destroy();
     this.router.navigateByUrl('/auth')
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

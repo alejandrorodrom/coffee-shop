@@ -29,6 +29,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CartComponent } from './views/cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule
   ]
 })
 export class ShopModule { }

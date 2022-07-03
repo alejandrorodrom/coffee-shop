@@ -15,7 +15,13 @@
 
   <div class="icons">
     <i *ngIf="route.url === '/menu' || route.url === '/products'" class="fas fa-search"></i>
-    <i routerLink="/cart" class="fas fa-shopping-cart"></i>
+    <i
+      [matBadge]="cartQuantity"
+      matBadgeSize="small"
+      [matBadgeHidden]="!cartQuantity"
+      routerLink="/cart"
+      class="fas fa-shopping-cart">
+    </i>
     <i (click)="logout()" class="fas fa-arrow-right-from-bracket"></i>
   </div>
 </header>
