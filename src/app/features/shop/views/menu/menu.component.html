@@ -3,10 +3,12 @@
   <div class="menus">
     <app-card-menu
       *ngFor="let menu of menus"
+      [id]="menu.id"
       [image]="menu.image"
       [name]="menu.name"
       [price]="menu.price"
-      [beforePrice]="menu.beforePrice">
+      [beforePrice]="menu.beforePrice"
+      (addCart)="addCart($event)">
     </app-card-menu>
   </div>
 </div>

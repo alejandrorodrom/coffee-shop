@@ -5,5 +5,5 @@
     {{ price | currency: 'S/' }}
     <span class="before-price">{{ beforePrice | currency: 'S/' }}</span>
   </div>
-  <app-button>Add to Cart</app-button>
+  <app-button (click)="emitItemAddCart()">Add to Cart</app-button>
 </div>

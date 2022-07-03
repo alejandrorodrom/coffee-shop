@@ -3,11 +3,13 @@
   <div class="products">
     <app-card-product
       *ngFor="let product of products"
+      [id]="product.id"
       [image]="product.image"
       [name]="product.name"
       [score]="product.score"
       [price]="product.price"
-      [beforePrice]="product.beforePrice">
+      [beforePrice]="product.beforePrice"
+      (addCart)="addCart($event)">
     </app-card-product>
   </div>
 </div>

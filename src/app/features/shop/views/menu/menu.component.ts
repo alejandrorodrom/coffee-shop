@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Menu } from '../../../../shared/interfaces/menu.interface';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from '../../../../shared/interfaces/item.interface';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
 
   menus: Menu[] = [];
 
@@ -22,7 +23,7 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  addCart(menu: Item): void {
+    console.log(menu);
   }
-
 }
