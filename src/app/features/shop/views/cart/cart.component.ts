@@ -17,6 +17,8 @@ export class CartComponent implements OnInit {
     total: number;
   }[] = [];
 
+  total = 0;
+
   constructor(
     private cartStore: CartStore
   ) {
@@ -29,12 +31,14 @@ export class CartComponent implements OnInit {
 
   loadData(): void {
     this.dataSource = this.cartStore.state.items.map(item => {
+      const totalPrice = item.quantity * item.price;
+      this.total = this.total + totalPrice;
       return {
         id: item.id,
         name: item.name,
         price: item.price,
         quantity: item.quantity,
-        total: item.price * item.quantity
+        total: totalPrice
       }
     });
   }
