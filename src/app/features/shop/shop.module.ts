@@ -27,6 +27,7 @@ import { ModalSuccessComponent } from './views/contact/components/modal-success/
 import { ControlErrorModule } from 'src/app/shared/components/control-error/control-error.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CartComponent } from './views/cart/cart.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { CartComponent } from './views/cart/cart.component';
     ControlErrorModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule
   ]
 })
 export class ShopModule { }

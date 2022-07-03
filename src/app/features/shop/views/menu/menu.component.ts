@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Menu } from '../../../../shared/interfaces/menu.interface';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../../../../shared/interfaces/item.interface';
+import { CartService } from '../../../../shared/services/cart/cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,8 @@ export class MenuComponent {
   menus: Menu[] = [];
 
   constructor(
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private cartService: CartService
   ) {
     this.activateRoute.data.subscribe(value => {
       if (value['data'].error) {
@@ -24,6 +26,6 @@ export class MenuComponent {
   }
 
   addCart(menu: Item): void {
-    console.log(menu);
+    this.cartService.addCart(menu);
   }
 }
