@@ -28,6 +28,7 @@ import { ControlErrorModule } from 'src/app/shared/components/control-error/cont
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CartComponent } from './views/cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule
   ]
 })
 export class ShopModule { }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartStore } from '../../../../shared/stores/cart/cart.store';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs';
-import { CartUpdateAction } from '../../../../shared/stores/cart/cart.actions';
+import { CartDeleteAction, CartSetAllAction, CartUpdateAction } from '../../../../shared/stores/cart/cart.actions';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +11,7 @@ import { CartUpdateAction } from '../../../../shared/stores/cart/cart.actions';
 })
 export class CartComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'price', 'quantity', 'total'];
+  displayedColumns: string[] = ['name', 'price', 'quantity', 'total', 'options'];
   dataSource: {
     id: number;
     name: string;
@@ -29,7 +29,6 @@ export class CartComponent implements OnInit {
     private cartStore: CartStore,
     private formBuilder: FormBuilder
   ) {
-    console.log(this.cartStore.state);
   }
 
   ngOnInit(): void {
@@ -53,12 +52,14 @@ export class CartComponent implements OnInit {
                 quantity: formItem!.quantity
               }
             }))
+            this.loadData();
           }
         });
       });
   }
 
   loadData(): void {
+    this.total = 0;
     this.dataSource = this.cartStore.state.items.map(item => {
       const totalPrice = item.quantity * item.price;
       this.total = this.total + totalPrice;
@@ -70,6 +71,17 @@ export class CartComponent implements OnInit {
         total: totalPrice
       }
     });
+  }
+
+  removeItem(id: number, formIndex: number): void {
+    this.cartStore.dispatch(new CartDeleteAction({ id: id }));
+    this.items.removeAt(formIndex);
+    this.loadData();
+  }
+
+  clear(): void {
+    this.cartStore.dispatch(new CartSetAllAction({ items: [] }));
+    this.loadData();
   }
 
 }
