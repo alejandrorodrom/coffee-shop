@@ -3,14 +3,16 @@
     <img src="assets/images/logo.png" alt="logo" class="logo">
   </a>
 
+  <lib-coffee-shop-library></lib-coffee-shop-library>
+
   <nav class="navbar">
-    <app-link routerLink="/home">Home</app-link>
-    <app-link (click)="redirectAbout()">About</app-link>
-    <app-link routerLink="/menu">Menu</app-link>
-    <app-link routerLink="/products">Products</app-link>
-    <app-link routerLink="/review">Review</app-link>
-    <app-link routerLink="/contact">Contact</app-link>
-    <app-link routerLink="/blog">Blogs</app-link>
+    <lib-coffee-link routerLink="/home">Home</lib-coffee-link>
+    <lib-coffee-link (clicked)="redirectAbout()">About</lib-coffee-link>
+    <lib-coffee-link routerLink="/menu">Menu</lib-coffee-link>
+    <lib-coffee-link routerLink="/products">Products</lib-coffee-link>
+    <lib-coffee-link routerLink="/review">Review</lib-coffee-link>
+    <lib-coffee-link routerLink="/contact">Contact</lib-coffee-link>
+    <lib-coffee-link routerLink="/blog">Blogs</lib-coffee-link>
   </nav>
 
   <div class="icons">

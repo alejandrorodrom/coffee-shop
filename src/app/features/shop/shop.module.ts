@@ -30,6 +30,12 @@ import { CartComponent } from './views/cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
+import {
+  CoffeeButtonBorderModule,
+  CoffeeButtonModule,
+  CoffeeLinkModule,
+  CoffeeShopLibraryModule
+} from 'coffee-shop-library';
 
 @NgModule({
   declarations: [
@@ -65,7 +71,11 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatProgressSpinnerModule,
     MatTableModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    CoffeeShopLibraryModule,
+    CoffeeLinkModule,
+    CoffeeButtonModule,
+    CoffeeButtonBorderModule
   ]
 })
 export class ShopModule { }
