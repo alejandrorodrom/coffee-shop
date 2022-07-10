@@ -1,12 +1,21 @@
-<div class="content">
-  <app-title text="customer's review" class="title"></app-title>
-  <div class="reviews">
-    <app-card-review
-      *ngFor="let review of reviews"
-      [comment]="review.comment"
-      [image]="review.image"
-      [name]="review.name"
-      [score]="review.score">
-    </app-card-review>
-  </div>
+<!--<div class="content">-->
+<!--  <app-title text="customer's review" class="title"></app-title>-->
+<!--  <div class="reviews">-->
+<!--    <app-card-review-->
+<!--      *ngFor="let review of reviews"-->
+<!--      [comment]="review.comment"-->
+<!--      [image]="review.image"-->
+<!--      [name]="review.name"-->
+<!--      [score]="review.score">-->
+<!--    </app-card-review>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div style="background: white; height: 500px">
+  <ngx-charts-pie-chart
+    [results]="saleData"
+    [legend]="true"
+    [legendTitle]="'Product Sale Report'"
+    [labels]="true">
+  </ngx-charts-pie-chart>
 </div>

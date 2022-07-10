@@ -31,6 +31,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     MatTableModule,
     MatButtonModule,
     MatBadgeModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    NgxChartsModule
   ]
 })
 export class ShopModule { }
