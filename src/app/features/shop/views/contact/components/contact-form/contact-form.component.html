@@ -21,6 +21,23 @@
     [messages]="presenter.phoneErrorMessage">
   </app-control-error>
 
+<!--  <ngx-recaptcha2-->
+<!--    formControlName="recaptcha"-->
+<!--    siteKey="6LcdodsgAAAAAGSo_67JJ22mY95fP6uTGfPX6FR2"-->
+<!--    (expire)="handleExpire()"-->
+<!--    (success)="handleSuccess($event)"-->
+<!--    size="normal"-->
+<!--    [theme]="theme">-->
+<!--  </ngx-recaptcha2>-->
+
+  <ngx-recaptcha2
+    formControlName="recaptcha"
+    siteKey="6LcdodsgAAAAAGSo_67JJ22mY95fP6uTGfPX6FR2"
+    theme="dark"
+    (expire)="presenter.expireEvent()"
+    (success)="presenter.successEvent()">
+  </ngx-recaptcha2>
+
   <app-button type="submit" [disabled]="presenter.contactFormGroup.invalid">
     <mat-spinner *ngIf="loading else text" diameter="20" color="warn"></mat-spinner>
     <ng-template #text>Contact Now</ng-template>

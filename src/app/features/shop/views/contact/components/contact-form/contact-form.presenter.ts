@@ -83,7 +83,8 @@ export class ContactFormPresenter {
         Validators.maxLength(13),
         Validators.minLength(7),
         Validators.pattern(/^\x2b[0-9, $]*$/)
-      ]]
+      ]],
+      recaptcha: ['', Validators.required]
     });
 
     // this.contactFormGroup.setValue({
@@ -92,11 +93,11 @@ export class ContactFormPresenter {
     //   phone: this.contactStore.state.phone
     // });
 
-    this.contactFormGroup.setValue({
-      name: this.store.selectSnapshot(state => state.contact.name),
-      email: this.store.selectSnapshot(state => state.contact.email),
-      phone: this.store.selectSnapshot(state => state.contact.phone)
-    });
+    // this.contactFormGroup.setValue({
+    //   name: this.store.selectSnapshot(state => state.contact.name),
+    //   email: this.store.selectSnapshot(state => state.contact.email),
+    //   phone: this.store.selectSnapshot(state => state.contact.phone)
+    // });
 
     console.log(this.store.selectSnapshot(state => state));
 
@@ -109,5 +110,13 @@ export class ContactFormPresenter {
         this.store.dispatch(new ContactSetAllActionNgxs(value));
         // this.contactStore.dispatch(new ContactSetAllAction(value));
       });
+  }
+
+  expireEvent(): void {
+    console.log('Expiro');
+  }
+
+  successEvent(): void {
+    console.log('Todo correcto');
   }
 }

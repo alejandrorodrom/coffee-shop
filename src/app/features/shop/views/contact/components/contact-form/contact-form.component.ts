@@ -22,8 +22,14 @@ export class ContactFormComponent {
   }
 
   contactNow(): void {
+    const body = {
+      name: this.presenter.nameControl.value,
+      email: this.presenter.emailControl.value,
+      phone: this.presenter.phoneControl.value
+    };
+
     this.loading = true;
-    this.contactService.contactNow(this.presenter.contactFormGroup.value)
+    this.contactService.contactNow(body)
       .pipe(
         finalize(() => this.loading = false)
       )
